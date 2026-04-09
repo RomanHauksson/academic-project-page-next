@@ -10,8 +10,7 @@ node_modules
 *!.yarn/versions
 
 # next.js
-packages/website/.next
-packages/template/.next
+.next
 */out/
 
 # production
