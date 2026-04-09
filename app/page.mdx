@@ -1,0 +1,167 @@
+<Header>
+  <Title>Academic Project Page Template</Title>
+  <Authors>
+    <Author notes={['*', '†']} institution="University of Texas at Dallas" url="https://roman.technology">Roman Hauksson-Neill</Author>
+    <Author notes={['*', '†']} institution="Institution Two">Author Two</Author>
+    <Author notes={['*']} institution="Institution Three">Author Three</Author>
+    <Author institution="Institution Four">Author Four</Author>
+  </Authors>
+  <Conference>Conference Name</Conference>
+  <Notes notes={[
+    { symbol: "*", text: "author note one" },
+    { symbol: "†", text: "author note two" },
+  ]}/>
+  <Links>
+    <Link url="https://github.com/RomanHauksson/academic-project-astro-template" icon={<span className="icon-[ri--file-pdf-2-line]" />}>Paper</Link>
+    <Link url="https://github.com/RomanHauksson/academic-project-astro-template" icon={<span className="icon-[ri--github-line]" />}>Code</Link>
+    <Link url="https://github.com/RomanHauksson/academic-project-astro-template" icon={<span className="icon-[academicons--arxiv]" />}>arXiv</Link>
+    <Link url="https://github.com/RomanHauksson/academic-project-astro-template" icon={<span className="icon-[ri--slideshow-2-line]" />}>Slides</Link>
+  </Links>
+</Header>
+
+## Abstract
+
+This is the demo for a template you can use to build a project page or interactive blog post for your research paper. [See the code for the template and instructions on how to use it yourself on GitHub](https://github.com/RomanHauksson/academic-project-astro-template). You can edit the content of the page as a Markdown file and use pre-built React components, outlined below, to add rich layouts, media, and interactivity. It's also easy to add your own components for anything more specialized.
+
+## Visuals
+
+### Images
+
+import dogsDiffc from "@/assets/dogs-diffc.png"
+import dogsTrue from "@/assets/dogs-true.png"
+import dogsMsillm from "@/assets/dogs-msillm.jpg"
+
+<Image src={dogsDiffc} alt="Photo of two running dogs, lossily compressed using the DiffC algorithm" />
+
+### Wide visual
+
+I constrained the maximum width of the text column to make sure it's readable even when the screen is wide. But images and other visuals should "break out" and take up more horizontal space: for this, try wrapping them in the `Wide` component.
+
+<Wide>
+  <Image src={dogsDiffc} alt="Photo of two running dogs, lossily compressed using the DiffC algorithm" />
+</Wide>
+
+### Figure with caption
+
+Wrap a visual in `Figure`, `FigureContent`, and `FigureCaption`.
+
+<Figure>
+  <FigureContent>
+    <Image src={dogsDiffc} alt="Photo of two running dogs, lossily compressed using the DiffC algorithm" />
+  </FigureContent>
+  <FigureCaption>
+A photo of two dogs running side-by-side in shallow water, lossily compressed using the [DiffC algorithm](https://jeremyiv.github.io/diffc-project-page/).
+  </FigureCaption>
+</Figure>
+
+### Comparison slider
+
+Use the `Comparison` component to compare two visuals with an interactive slider.
+
+<Comparison itemOne={<Image src={dogsDiffc} alt="Photo of two running dogs, lossily compressed using the DiffC algorithm" />} itemTwo={<Image src={dogsTrue} alt="True photo of two dogs running side-by-side in shallow water" />}/>
+
+### Tab panels
+
+Tab panels are a great way to display a labeled collection of related visuals without taking up too much space.
+
+<Tabs>
+  <TabsList>
+    <TabsTrigger value="true">Ground truth</TabsTrigger>
+    <TabsTrigger value="diffc">DiffC (Flux-dev)</TabsTrigger>
+    <TabsTrigger value="msillm">MS-ILLM</TabsTrigger>
+  </TabsList>
+  <TabsContent value="true">
+    <Image
+      src={dogsTrue}
+      alt="True photo of two dogs running side-by-side in shallow water"
+    />
+  </TabsContent>
+  <TabsContent value="diffc">
+    <Image
+      src={dogsDiffc}
+      alt="Photo of two running dogs, lossily compressed using the DiffC algorithm"
+    />
+  </TabsContent>
+  <TabsContent value="msillm">
+    <Image
+      src={dogsMsillm}
+      alt="Photo of two running dogs, lossily compressed using MS-ILLM"
+    />
+  </TabsContent>
+</Tabs>
+
+### Carousel
+
+A carousel is another useful pattern for a collection of visuals that don't necessarily have meaningful labels.
+
+<Carousel>
+    <Image src={dogsTrue} alt="True photo of two dogs running side-by-side in shallow water" />
+    <Image src={dogsDiffc} alt="Photo of two running dogs, lossily compressed using the DiffC algorithm" />
+    <Image
+      src={dogsMsillm}
+      alt="Photo of two running dogs, lossily compressed using MS-ILLM"
+    />
+</Carousel>
+
+## Videos
+
+### Native video
+
+<Video src="/outside.mp4" />
+
+### YouTube embed
+
+For longer videos, use a YouTube embed for better performance.
+
+<YouTubeVideo videoId="wjZofJX0v4M" />
+
+## Columns
+
+Lay out multiple columns of content. Will wrap on narrow screens.
+
+<Columns>
+  <Column>
+    <Image src={dogsTrue} alt="True photo of two dogs running side-by-side in shallow water" />
+  </Column>
+  <Column>
+    <Image src={dogsDiffc} alt="Photo of two running dogs, lossily compressed using the DiffC algorithm" />
+  </Column>
+</Columns>
+
+## $\LaTeX$
+
+You can also add $\LaTeX$ formulas, rendered using [MathJax](https://www.mathjax.org/). You can write them inline, like this: $a^2 + b^2 = c^2$. Or, you can write them as a block:
+
+$$
+\int_a^b f(x) dx
+$$
+
+## Footnotes
+
+If you add any footnotes with this syntax[^mynote], they'll appear in a section at the bottom of the page.
+
+[^mynote]: On the web, they should really be called "endnotes", since each page constitutes a full document.
+
+## Table
+
+Add simple tables using [GitHub Flavored Markdown syntax](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/organizing-information-with-tables):
+
+| Model | Accuracy | F1 score | Training time (hours) |
+| :--- | :---: | :---: | :---: |
+| BERT-base | 0.89 | 0.87 | 4.5 |
+| RoBERTa-large | 0.92 | 0.91 | 7.2 |
+| DistilBERT | 0.86 | 0.84 | 2.1 |
+| XLNet | 0.90 | 0.89 | 6.8 |
+
+## BibTeX citation
+
+Displaying the BibTeX entry for your paper in a code block makes it easy to copy and paste.
+
+```bibtex
+@misc{roman2024academic,
+  author = "{Roman Hauksson-Neill}",
+  title = "Academic Project Page Template",
+  year = "2024",
+  howpublished = "\url{https://research-template.roman.technology}",
+}
+```
