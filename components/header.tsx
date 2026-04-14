@@ -1,4 +1,4 @@
-export function Header({ children }: { children: React.ReactNode }) {
+function Header({ children }: { children: React.ReactNode }) {
 	return (
 		<header className="flex flex-col gap-6 mx-auto mb-12 max-w-[50rem] px-6 text-center">
 			{children}
@@ -6,11 +6,11 @@ export function Header({ children }: { children: React.ReactNode }) {
 	);
 }
 
-export function Title({ children }: { children: React.ReactNode }) {
+function Title({ children }: { children: React.ReactNode }) {
 	return <h1 className="text-5xl font-medium">{children}</h1>;
 }
 
-export function Authors({ children }: { children: React.ReactNode }) {
+function Authors({ children }: { children: React.ReactNode }) {
 	return (
 		<div className="flex flex-row flex-wrap justify-center gap-x-8 gap-y-4">
 			{children}
@@ -18,7 +18,7 @@ export function Authors({ children }: { children: React.ReactNode }) {
 	);
 }
 
-export function Author({
+function Author({
 	children,
 	institution,
 	url,
@@ -47,7 +47,7 @@ export function Author({
 	);
 }
 
-export function Links({ children }: { children: React.ReactNode }) {
+function Links({ children }: { children: React.ReactNode }) {
 	return (
 		<div className="not-prose flex flex-row flex-wrap justify-center gap-2">
 			{children}
@@ -55,7 +55,7 @@ export function Links({ children }: { children: React.ReactNode }) {
 	);
 }
 
-export function Link({
+function Link({
 	children,
 	url,
 	icon,
@@ -75,7 +75,7 @@ export function Link({
 	);
 }
 
-export function Conference({ children }: { children: React.ReactNode }) {
+function Conference({ children }: { children: React.ReactNode }) {
 	return <div>{children}</div>;
 }
 
@@ -84,7 +84,7 @@ type Note = {
 	text: string;
 };
 
-export function Notes({ notes }: { notes: Note[] }) {
+function Notes({ notes }: { notes: Note[] }) {
 	return (
 		<div className="text-center text-sm">
 			{notes.map((note, index, array) => (
@@ -97,3 +97,5 @@ export function Notes({ notes }: { notes: Note[] }) {
 		</div>
 	);
 }
+
+export { Header, Title, Authors, Author, Links, Link, Conference, Notes };
