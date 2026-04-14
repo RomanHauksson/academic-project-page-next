@@ -3,7 +3,12 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
 	output: "export",
-	basePath: "/academic-project-page-next",
+
+	// If you deploy this template with GitHub pages, it may be hosted under a sub-path, such as:
+	// https://romanhauksson.github.io/academic-project-page-next/
+	// where `academic-project-page-next/` is the sub-path.
+	basePath: process.env.PAGES_BASE_PATH ?? "",
+
 	// Required because GitHub Pages doesn't support Next.js Image Optimization
 	images: {
 		unoptimized: true,
