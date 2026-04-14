@@ -1,13 +1,9 @@
 "use client";
 
-import { cn } from "@/lib/utils";
 import { Children, type ReactNode, useEffect, useRef, useState } from "react";
+import { cn } from "@/lib/utils";
 
-interface CarouselProps {
-	children: ReactNode;
-}
-
-export function Carousel({ children }: CarouselProps) {
+export function Carousel({ children }: { children: ReactNode }) {
 	const [currentIndex, setCurrentIndex] = useState(0);
 	const carouselRef = useRef<HTMLDivElement>(null);
 	const slides = Children.toArray(children);

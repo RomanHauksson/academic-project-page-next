@@ -1,12 +1,10 @@
-interface YouTubeVideoProps {
-	videoId: string;
-	aspectRatio?: number;
-}
-
 export function YouTubeVideo({
 	videoId,
 	aspectRatio = 16 / 9,
-}: YouTubeVideoProps) {
+}: {
+	videoId: string;
+	aspectRatio?: number;
+}) {
 	return (
 		<div className="w-full overflow-hidden rounded-lg" style={{ aspectRatio }}>
 			<iframe

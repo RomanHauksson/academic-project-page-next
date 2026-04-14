@@ -9,12 +9,13 @@ const ReactCompareSlider = dynamic(
 	},
 );
 
-interface ComparisonProps {
+export function Comparison({
+	itemOne,
+	itemTwo,
+}: {
 	itemOne: React.ReactNode;
 	itemTwo: React.ReactNode;
-}
-
-export function Comparison({ itemOne, itemTwo }: ComparisonProps) {
+}) {
 	return (
 		<ReactCompareSlider
 			className="not-prose w-full rounded-lg"

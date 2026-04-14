@@ -1,5 +1,6 @@
 import type { MDXComponents } from "mdx/types";
 import { Carousel } from "@/components/carousel";
+import { Column, Columns } from "@/components/columns";
 import { Comparison } from "@/components/comparison";
 import { Figure, FigureCaption, FigureContent } from "@/components/figure";
 import {
@@ -16,7 +17,6 @@ import { HighlightedSection } from "@/components/highlighted-section";
 import { Image } from "@/components/image";
 import { SmallCaps } from "@/components/small-caps";
 import { TableWrapper } from "@/components/table-wrapper";
-import { Column, Columns } from "@/components/columns";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Video } from "@/components/video";
 import { Wide } from "@/components/wide";
