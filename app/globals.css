@@ -161,3 +161,8 @@ main .katex-display {
 mjx-container[jax="SVG"] > svg {
 	display: inline;
 }
+
+/* Hide the endnotes section at the bottom since footnotes are now inline popovers */
+section.footnotes[data-footnotes] {
+	display: none;
+}

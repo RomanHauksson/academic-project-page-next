@@ -3,6 +3,7 @@ import { Carousel } from "@/components/carousel";
 import { Column, Columns } from "@/components/columns";
 import { Comparison } from "@/components/comparison";
 import { Figure, FigureCaption, FigureContent } from "@/components/figure";
+import { FootnoteRef } from "@/components/footnote-ref";
 import {
 	Author,
 	Authors,
@@ -48,6 +49,7 @@ export const components = {
 	TabsContent,
 	TabsList,
 	TabsTrigger,
+	sup: FootnoteRef,
 	table: TableWrapper,
 } satisfies MDXComponents;
 
